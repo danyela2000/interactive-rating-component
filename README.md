@@ -63,7 +63,7 @@ First, I added a common class to all the rating items, in order to select them i
       <li class="rating-item" id="4">4</li>
       <li class="rating-item" id="5">5</li>
     </ul>
-``
+```
 
 Then, I created a class in css called "active" which represents the selected state of a rating item.
 
