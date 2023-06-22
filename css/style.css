@@ -59,12 +59,17 @@ button {
     transition:0.3s;
 }
 
+button#return-btn {
+    width: 90%;
+}
 
 button:hover,
 button:focus {
     color: var(--Orange);
     background-color: var(--White);
 }
+
+
 
 /* ------- Typography ----------- */
 
@@ -89,6 +94,7 @@ li {
     padding: .73em  1.267em;
     border-radius: 3.33em;
     cursor: pointer;
+    transition:0.3s;
 }
 
 li:hover {
