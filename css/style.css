@@ -26,10 +26,10 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--Dark-blue);
-    width:  21.875rem; /*350px;*/
-    height: 23.125rem; /*370px;*/
-    border-radius: .94em;
+    background: linear-gradient(var(--Dark-blue), var(--Very-dark-blue));
+    width: 21.875rem;
+    height: 25rem;
+    border-radius: 0.94em;
     padding: 1.125em;
 }
 
@@ -44,7 +44,7 @@ ul.rating-section {
 }
 
 
-.submit-btn {
+button {
     color: var(--White);
     font-size: .94rem;
     letter-spacing: .2em;
@@ -56,11 +56,12 @@ ul.rating-section {
     margin-bottom: 1.33em;
     padding: .8em 0;
     cursor: pointer;
+    transition:0.3s;
 }
 
 
-.submit-btn:hover,
-.submit-btn:focus {
+button:hover,
+button:focus {
     color: var(--Orange);
     background-color: var(--White);
 }
