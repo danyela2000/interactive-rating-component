@@ -13,6 +13,11 @@ ratingSection.addEventListener("click", event => {
     }
 })
 
+document.addEventListener("click", event => {
+    if(event.target.id == "return-btn") {
+            window.location.reload()
+})
+
 submitBtn.addEventListener("click", ()=>{
     if(isSelected) {
         render()
@@ -21,7 +26,6 @@ submitBtn.addEventListener("click", ()=>{
     }
     
 })
-
 
 ratingItems.forEach(ratingItem => {
     // For each rating item add an event listener
@@ -46,10 +50,7 @@ function setFinalMessageHtml(ratingId) {
         don't hesitate to get in touch!</p>
         <button type="button" id="return-btn">Rate again</button>
     </div>
-  `
-    document.getElementById("return-btn").addEventListener("click", () => {
-    location.reload()
-   })
+  ` 
 }
 
 // add and render the final message in the main-container after the submit button has been pressed
