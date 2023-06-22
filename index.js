@@ -16,6 +16,7 @@ ratingSection.addEventListener("click", event => {
 document.addEventListener("click", event => {
     if(event.target.id == "return-btn") {
             window.location.reload()
+    }
 })
 
 submitBtn.addEventListener("click", ()=>{
