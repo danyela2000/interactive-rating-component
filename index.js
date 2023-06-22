@@ -49,7 +49,7 @@ function setFinalMessageHtml(ratingId) {
         <h2 class="thank-you-title"> Thank you!</h2>
         <p class="appreciation-text">  We appreciate you taking the time to give a rating. If you ever need more support, 
         don't hesitate to get in touch!</p>
-        <button type="button" id="return-btn">Rate again</button>
+        <button class="return-btn" type="button" id="return-btn">Rate again</button>
     </div>
   ` 
 }
