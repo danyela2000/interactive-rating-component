@@ -59,7 +59,7 @@ button {
     transition:0.3s;
 }
 
-button#return-btn {
+button.return-btn {
     width: 90%;
 }
 
