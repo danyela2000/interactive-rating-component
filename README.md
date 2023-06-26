@@ -50,41 +50,30 @@ Users should be able to:
 - Modify styles, add/remove css classes using JavaScript
 
 ### What I learned
-I learned something new while I was working at this project.
-I learned how to make a button/item in css to remain selected until I select another one.
-
-First, I added a common class to all the rating items, in order to select them in JavaScript, for later use.
-
-```html
-<ul class="rating-section">
-      <li class="rating-item" id="1">1</li>
-      <li class="rating-item" id="2">2</li>
-      <li class="rating-item" id="3">3</li>
-      <li class="rating-item" id="4">4</li>
-      <li class="rating-item" id="5">5</li>
-    </ul>
-```
-
-Then, I created a class in css called "active" which represents the selected state of a rating item.
-
+I learned how to change the default appearance of a radio button, and how to customize it
+in css:
 ```css
-li.active {
+ input[type="radio"] {
+    appearance: none;
+}
+ /*  If a radio button has been checked then change the color and background color of the label */
+ input[type="radio"]:checked + label {
     color: var(--White);
     background-color: var(--Light-grey);
 }
+
+ label:hover {
+    color: var(--White);
+    background-color: var(--Orange);
+ }
 ```
 
-Then, in JavaScript, I selected all the rating items from the DOM and for each rating item I added an event listener.
-If a rating item is selected then I remove the active class from all items.
-Then I added the active class just for the current selected item.
-
+In JavaScript I learn how to check if a radio button has been checked and how to use its value
 ```js
-ratingItems.forEach(ratingItem => {
-    ratingItem.addEventListener("click", () => {
-        ratingItems.forEach(item => item.classList.remove('active'))
-        ratingItem.classList.add("active")
-    })
-})
+  document.querySelectorAll('input[name="rating"]:checked')
+  //returns a collection with all the radio buttons that has been checked
+  document.querySelector('input[name="rating"]:checked').value  
+  //returns the value of the checked radio button 
 ```
 
 I also learned how to import a css file into another one.
