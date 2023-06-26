@@ -33,8 +33,11 @@ body {
     padding: 1.125em;
 }
 
-ul.rating-section {
-    list-style-type: none;
+.rating-form {
+    display: flex;
+    flex-direction: column;
+}
+.rating-section {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -43,8 +46,7 @@ ul.rating-section {
     font-size: .94rem;
 }
 
-
-button {
+.submit-btn, button {
     color: var(--White);
     font-size: .94rem;
     letter-spacing: .2em;
@@ -64,7 +66,9 @@ button.return-btn {
 }
 
 button:hover,
-button:focus {
+button:focus,
+.submit-btn:hover,
+.submit-btn:focus {
     color: var(--Orange);
     background-color: var(--White);
 }
@@ -84,7 +88,7 @@ button:focus {
     font-size: 1rem;
 }
 
-li {
+label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,15 +101,21 @@ li {
     transition:0.3s;
 }
 
-li:hover {
+input[type="radio"] {
+    appearance: none;
+}
+  
+input[type="radio"]:checked + label {
+    color: var(--White);
+    background-color: var(--Light-grey);
+}
+  
+
+label:hover {
     color: var(--White);
     background-color: var(--Orange);
 }
 
-li.active {
-    color: var(--White);
-    background-color: var(--Light-grey);
-}
 
 /* Images & Icons */
 .icon-container {

@@ -1,50 +1,27 @@
 const mainContainer = document.querySelector(".main-container")
-const submitBtn = document.querySelector(".submit-btn")
-const ratingSection = document.querySelector(".rating-section")
-const ratingItems = document.querySelectorAll(".rating-item")
+const ratingForm = document.querySelector(".rating-form")
 let finalMessage = ""
-let isSelected = false
 
-ratingSection.addEventListener("click", event => {
-    if(event.target.id) {
-        isSelected = true
-        setFinalMessageHtml(event.target.id)
-
-    }
-})
-
-document.addEventListener("click", event => {
-    if(event.target.id == "return-btn") {
-            window.location.reload()
-    }
-})
-
-submitBtn.addEventListener("click", ()=>{
-    if(isSelected) {
-        render()
+ratingForm.addEventListener("submit", () => 
+{   // check if the user has selected a rating number before submiting
+    if(!document.querySelectorAll('input[name="rating"]:checked').length) {
+        /*querySelectorAll('input[name="rating"]:checked') returns 
+          a collection with all the checked radio buttons*/
+        alert("Please, select a rating number, first!")
     } else {
-        alert("Please, select a number rating, first!")
-    }
-    
-})
+        setFinalMessageHtml(document.querySelector('input[name="rating"]:checked').value)
+        /*querySelector('input[name="rating"]:checked').value returns the 
+        value of the checked radio button */
+        render()
+    }   
+}) 
 
-ratingItems.forEach(ratingItem => {
-    // For each rating item add an event listener
-    ratingItem.addEventListener("click", () => {
-
-        // if a rating item is selected then remove the active class from all items
-        ratingItems.forEach(item => item.classList.remove('active'))
-        //then add the active class just for the current selected item
-        ratingItem.classList.add("active")
-    })
-})
-
-function setFinalMessageHtml(ratingId) {
+function setFinalMessageHtml(ratingNumber) {
     finalMessage = `
     <div class="final-message-container">
         <img class="illustration-thank-you" alt="an icon that represents a gray phone completing some operations" src="./images/illustration-thank-you.svg">
         <p class="selected-rating-message">
-        You selected ${ratingId} out of 5
+        You selected ${ratingNumber} out of 5
         </p>
         <h2 class="thank-you-title"> Thank you!</h2>
         <p class="appreciation-text">  We appreciate you taking the time to give a rating. If you ever need more support, 
@@ -58,6 +35,12 @@ function setFinalMessageHtml(ratingId) {
 function render() {
     mainContainer.innerHTML = finalMessage
 }
+
+document.addEventListener("click", event => {
+    if(event.target.id == "return-btn") {
+        window.location.reload()
+    }
+})
 
 
 
